@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - main block
- * Description: Use `putchar`to print the alphabet in lowercase.
+ * Description: Use `putchar` to print lowercase and uppercase alphabet.
  * Return: 0
  */
 int main(void)
@@ -13,6 +13,15 @@ int main(void)
 		putchar(c);
 		c++;
 	}
+
+	c = 'A';
+
+	while (c <= 'Z')
+	{
+		putchar(c);
+		c++;
+	}
+
 	putchar('\n');
 
 	return (0);
