@@ -7,21 +7,20 @@
  */
 int main(void)
 {
-	int a, j, k, l;
+	int a, b, c, d;
 
 	for (a = 0; a < 1000; a++)
 	{
-		j = a / 100; /* hundreds */
-		k = (a / 10) % 10; /* tens */
-		l = i % 10; /* singles */
-
-		if (j < k && k < l)
+		b = a / 100;
+		c = (a / 10) % 10;
+		d = a % 10; 
+		if (b < c && c < d)
 		{
-			putchar(j + '0');
-			putchar(k + '0');
-			putchar(l + '0');
+			putchar(b + '0');
+			putchar(c + '0');
+			putchar(d + '0');
 
-			if (i < 700)
+			if (a < 700)
 			{
 				putchar(44);
 				putchar(32);
@@ -31,3 +30,4 @@ int main(void)
 	putchar('\n');
 
 	return (0);
+}
