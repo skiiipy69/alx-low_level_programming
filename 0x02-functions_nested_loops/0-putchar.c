@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * main - main block
  * Description: Print _putchar followed by a new line.
@@ -6,14 +7,16 @@
  */
 int main(void)
 {
-	char alx[10] = "_putchar";
+    char alx[] = "_putchar";
+    int i = 0;
 
-	int i;
+    while (alx[i] != '\0')
+    {
+        _putchar(alx[i]);
+        i++;
+    }
 
-	for (i = 0; i < 8; i++)
-	{
-		putchar(alx[i]);
-	}
-	putchar(10);
-	return (0);
+    _putchar('\n');
+    return 0;
 }
+
