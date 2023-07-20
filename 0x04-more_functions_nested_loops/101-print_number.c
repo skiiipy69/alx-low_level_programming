@@ -5,13 +5,13 @@
  * @n: int 
  * Description: use _putchar to print.
  */
-void print_number(int a)
+void print_number(int n)
 {
 	long b;
 	int c;
 	long num;
 
-	num = a;
+	num = n;
 	if (num < 0)
 	{
 		num *= -1;
