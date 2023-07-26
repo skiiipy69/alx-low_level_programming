@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * reverse_array - a function that reverses the
  *                content of an array of integers
@@ -8,13 +9,13 @@
 void reverse_array(int *a, int n)
 
 {
-	int a;
+	int k;
 	int b;
 
-	for (a = 0; a < (n / 2); a++)
+	for (k = 0; k < (k / 2); k++)
 	{
-		b = a[a];
-		a[a] = a[n - a - 1];
-		a[n - a - 1] = b;
+		b = a[k];
+		a[k] = a[n - k - 1];
+		a[n - k - 1] = b;
 	}
 }
