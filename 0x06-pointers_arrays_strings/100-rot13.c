@@ -2,23 +2,28 @@
 
 /**
  * rot13 - rotate characters 13 places in the alphabet
- * @c: string
- * Return: `c`
+ * @s: string
+ * Return: `s`
  */
 
-char *rot13(char *c)
+char *rot13(char *s)
 {
-	int a;
-	char stock1[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-	char stock2[] = "nopqrstuvwxyzabcdefghijklm";
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i = 0;
+	int d;
 
-	for (a = 0; c[a] != '\0'; a++)
+	while (*(s + i) != '\0')
 	{
-		if ((c[a] > 64 && c[a] < 91) || (c[a] > 96 && c[a] < 123))
+		for (d = 0; d <= 51; d++)
 		{
-			c[a] = (c[a] - 65 > 25) ?
-				stock2[c[a] - 97] : stock1[c[a] - 65];
+			if (*(s + i) == a[d])
+			{
+				*(s + i) = b[d];
+				break;
+			}
 		}
+		i++;
 	}
-	return (c);
+	return (s);
 }
