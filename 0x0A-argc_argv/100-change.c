@@ -11,50 +11,33 @@
  *
  * Return: 0.
  */
-
- int main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int sum, amount;
-	unsigned int x;
-	char *p;
-	int cents[] = {25, 10, 5, 2};
+	int cents, coins_amount = 0;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	sum = strtol(argv[1], &p, 10);
-
-	amount = 0;
-
-	if (!*p)
-
-	{
-		while (sum > 1)
-		{
-			for (x = 0; x < sizeof(cents[x]); x++)
-			{
-				if (sum >= cents[x])
-				{
-					amount += sum / cents[x];
-					sum = sum % cents[x];
-				}
-			}
-		}
-		if (sum == 1)
-			amount++;
-	}
-
 	else
 	{
-		printf("Error\n");
-		return (1);
+		cents = atoi(argv[1]);
+		while (cents > 0)
+		{
+			if (cents >= 25)
+				cents -= 25;
+			else if (cents >= 10)
+				cents -= 10;
+			else if (cents >= 5)
+				cents -= 5;
+			else if (cents >= 2)
+				cents -= 2;
+			else if (cents >= 1)
+				cents -= 1;
+			coins_amount += 1;
+		}
 	}
-
-	printf("%d\n", amount);
-
-
+	printf("%d\n", coins_amount);
 	return (0);
 }
