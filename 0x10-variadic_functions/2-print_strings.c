@@ -4,28 +4,31 @@
 
 /**
  * print_strings - print a string.
- * @separator: string 
+ * @separator: string
  * @n: number of strings.
  */
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	unsigned int x;
-	va_list list;
-	char *str;
+	va_list ap;
+	unsigned int i;
+	char *hold;
 
-	va_start(list, n);
-	for (x = 0; x < n; x++)
+
+	va_start(ap, n);
+
+	for (i = 0; i < n; i++)
 	{
-		str = va_arg(list, char*);
-		if (str == NULL)
-			printf("(nil)");
+		hold = va_arg(ap, char *);
+		if (hold)
+			printf("%s", hold);
 		else
-			printf("%s", str);
-		if (x != (n - 1) && separator != NULL)
+			printf("(nil)");
+
+		if (separator && i != n - 1)
 			printf("%s", separator);
 	}
-	printf("\n");
 
-	va_end(list);
+	va_end(ap);
+	printf("\n");
 }
