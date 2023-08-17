@@ -12,17 +12,16 @@ void _printstr(va_list list);
 void _printfloat(va_list list);
 void _printint(va_list list);
 /**
- * struct print - new struct type defining print
+ * struct func_print - new struct type defining print
  *
  * @check: check data type
  * @print_func: a function pointer that prints
  *             a data type according to the symbol
 */
 
-typedef struct print
+typedef struct func_print
 {
-	char *check;
-	void (*print_func)(va_list arg);
+	char *type;
+	void (*f)();
 } func_print;
-
 #endif /* VARIADIC_FUNCTIONS_H */

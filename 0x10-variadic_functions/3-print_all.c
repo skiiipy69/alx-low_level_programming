@@ -53,7 +53,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 	char *sepe;
 
-	checker storage[] = {
+	func_print storage[] = {
 		{ "c", _printchar },
 		{ "f", _printfloat },
 		{ "s", _printstr },
