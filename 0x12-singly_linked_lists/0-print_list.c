@@ -7,21 +7,19 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t check = 1;
+	size_t check_function = 0;
 
-	if (h == NULL)
-		return (0);
-	while (h->next != NULL)
+	while (h)
 	{
-
 		if (h->str == NULL)
-			printf("[%d] %s\n", 0, "(nil)");
+			printf("[0] (nil)\n");
+
 		else
 			printf("[%d] %s\n", h->len, h->str);
-		h = h->next;
 
-		check += 1;
+		check_function++;
+		h = h->next;
 	}
-	printf("[%d] %s\n", h->len, h->str);
-	return (check);
+
+	return (check_function);
 }
