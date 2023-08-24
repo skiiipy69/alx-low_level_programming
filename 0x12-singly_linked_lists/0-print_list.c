@@ -3,21 +3,20 @@
 
 /**
  * print_list - print all elements of `list_t` list
- * @h: head first node
+ * @h: head of linked list
  * Return: number of nodes
  */
 size_t print_list(const list_t *h)
 {
-	const list_t *check;
-	size_t i;
+	size_t i = 0;
 
-	i = 0;
-	check = h;
-	while (check != NULL)
+	while (h)
 	{
-
-		printf("[%d] %s\n", check->len, check->str);
-		check = check->next;
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", h->len, h->str);
+		h = h->next;
 		i++;
 	}
 
