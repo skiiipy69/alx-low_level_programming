@@ -7,14 +7,15 @@
  * free_list - free a list
  * @head: head of the linked list.
  */
-
 void free_list(list_t *head)
 {
-	if (head)
+	list_t *i;
+
+	while (head)
 	{
-		free_list(head->next);
-		if (head->str)
-			free(head->str);
+		i = head->next;
+		free(head->str);
 		free(head);
+		head = i;
 	}
 }
